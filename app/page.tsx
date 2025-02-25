@@ -1,101 +1,74 @@
+import FeaturedServices from "@/components/layout/FeaturedSerices";
 import Image from "next/image";
-
+import { EthnicButton } from "../components/ui/ethnic-button";
+import { EthnicPattern } from "../components/ui/EthnicPattern";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen">
+      {/* Hero section */}
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-2xl">
+            <h1 className="mb-6 tracking-tight">
+              <span className="block text-gold">Beautés du Monde</span>
+              <span className="block">Éveillez votre beauté naturelle</span>
+            </h1>
+            <p className="text-lg mb-8 text-muted-foreground">
+              Découvrez nos soins esthétiques et services de coiffure inspirés
+              par les traditions de beauté du monde entier.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <EthnicButton size="lg">Nos services</EthnicButton>
+              <EthnicButton size="lg" variant="outline">
+                Réserver
+              </EthnicButton>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <EthnicPattern asBackground opacity={0.05} />
+      </section>
+
+      {/* About section */}
+      <section className="py-16 px-4 relative bg-card">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="relative w-full h-[400px] overflow-hidden ethnic-border">
+                <Image
+                  src="/images/hair-salon-workplace.jpg"
+                  alt="Beautés du Monde"
+                  fill={true}
+                />
+                <EthnicPattern
+                  className="absolute top-0 left-0 w-full h-full"
+                  opacity={0.2}
+                />
+              </div>
+            </div>
+            <div>
+              <h2 className="section-title">Notre Philosophie</h2>
+              <p className="mb-4">
+                Chez Beautés du Monde, nous puisons notre inspiration dans les
+                rituels de beauté des quatre coins du monde pour vous offrir une
+                expérience unique et personnalisée.
+              </p>
+              <p className="mb-4">
+                Notre équipe de professionnels passionnés combine expertise
+                technique et connaissance des traditions pour sublimer votre
+                beauté naturelle.
+              </p>
+              <p>
+                Chaque soin est une invitation au voyage, une parenthèse de
+                bien-être où l&apos;excellence et l&apos;authenticité sont au
+                rendez-vous.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured services preview */}
+      <FeaturedServices />
+    </main>
   );
 }

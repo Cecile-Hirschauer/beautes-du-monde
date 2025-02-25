@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 100">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37" />
+      <stop offset="25%" stop-color="#f4e5a7" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="75%" stop-color="#f4e5a7" />
+      <stop offset="100%" stop-color="#d4af37" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Motif central élégant -->
+  <path d="M400,50 C430,30 470,70 500,50 C530,30 570,70 600,50 C630,30 670,70 700,50 C730,30 770,70 800,50 M400,50 C370,70 330,30 300,50 C270,70 230,30 200,50 C170,70 130,30 100,50 C70,70 30,30 0,50" 
+        fill="none" 
+        stroke="url(#goldGradient)" 
+        stroke-width="2" />
+  
+  <!-- Points décoratifs aux jonctions -->
+  <g fill="#d4af37">
+    <circle cx="400" cy="50" r="3" />
+    <circle cx="300" cy="50" r="3" />
+    <circle cx="200" cy="50" r="3" />
+    <circle cx="100" cy="50" r="3" />
+    <circle cx="500" cy="50" r="3" />
+    <circle cx="600" cy="50" r="3" />
+    <circle cx="700" cy="50" r="3" />
+  </g>
+  
+  <!-- Petits ornements calligraphiques -->
+  <g fill="none" stroke="url(#goldGradient)" stroke-width="1">
+    <path d="M400,50 C405,40 410,60 415,50" />
+    <path d="M300,50 C305,40 310,60 315,50" />
+    <path d="M200,50 C205,40 210,60 215,50" />
+    <path d="M500,50 C505,40 510,60 515,50" />
+    <path d="M600,50 C605,40 610,60 615,50" />
+  </g>
+</svg>
