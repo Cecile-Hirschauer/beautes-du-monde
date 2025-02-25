@@ -1,0 +1,640 @@
+{
+  "NOS SUPER PROMOTIONS": [
+    {
+      "nom": "Shampooing + Brushing* + Vernis semi permanent main",
+      "description": "",
+      "duree": "2h",
+      "prix": "39 €"
+    },
+    {
+      "nom": "Lissage indien*",
+      "description": "",
+      "duree": "2h 30min",
+      "prix": "99 €"
+    },
+    {
+      "nom": "Hammam + gommage + massage 30' + thé",
+      "description": "",
+      "duree": "2h",
+      "prix": "79 €"
+    },
+    {
+      "nom": "Soin Visage Coup d'éclat",
+      "description": "",
+      "duree": "45min",
+      "prix": "49 €"
+    },
+    {
+      "nom": "Forfait Mèches/ Ombré Hair / Balayage + Patine + Brushing Cheveux Mi-longs",
+      "description": "",
+      "duree": "2h",
+      "prix": "99 €"
+    }
+  ],
+  "NOS COIFFURE FEMMES": [
+    {
+      "nom": "Shampoing + brushing - cheveux courts",
+      "description": "",
+      "duree": "1h",
+      "prix": "25 €"
+    },
+    {
+      "nom": "Shampoing + Brushing mi longs",
+      "description": "",
+      "duree": "30min",
+      "prix": "30 €"
+    },
+    {
+      "nom": "Shampoing + Brushing Cheveux Longs",
+      "description": "",
+      "duree": "30min",
+      "prix": "35 €"
+    },
+    {
+      "nom": "Shampoing + coupe + brushing - cheveux courts",
+      "description": "",
+      "duree": "1h",
+      "prix": "45 €"
+    },
+    {
+      "nom": "Shampooing coupe brushing mi long",
+      "description": "",
+      "duree": "45min",
+      "prix": "50 €"
+    }
+  ],
+  "COIFFURE HOMMES": [
+    {
+      "nom": "Shampoing coupe homme coiffage",
+      "description": "",
+      "duree": "30min",
+      "prix": "25 €"
+    },
+    {
+      "nom": "Couleur homme",
+      "description": "",
+      "duree": "1h",
+      "prix": "49 €"
+    },
+    {
+      "nom": "Lissage homme",
+      "description": "",
+      "duree": "1h",
+      "prix": "59 €"
+    },
+    {
+      "nom": "Soin capilaire botox pour homme",
+      "description": "",
+      "duree": "30min",
+      "prix": "39 €"
+    }
+  ],
+  "Nos Ombrés  hairs": [
+    {
+      "nom": "Ombré Hair* ( + Patine et Soin)",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "de"
+    },
+    {
+      "nom": "Shampoing, Soin, Ombré Hair & Brushing : Cheveux courts",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "79 €"
+    },
+    {
+      "nom": "Shampoing, Soin, Ombré Hair & Brushing : Cheveux longs",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "109 €"
+    },
+    {
+      "nom": "Shampoing, Soin, Ombré Hair & Brushing : Cheveux mi-longs",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "99 €"
+    },
+    {
+      "nom": "Supplément Coupe",
+      "description": "",
+      "duree": "30min",
+      "prix": "20 €"
+    }
+  ],
+  "NOS MECHES SUBLIMANTES": [
+    {
+      "nom": "Shampoing brushing mèches- cheveux longs",
+      "description": "",
+      "duree": "1h 15min",
+      "prix": "99 €"
+    },
+    {
+      "nom": "Shampoing Brushing Mèches - cheveux courts",
+      "description": "",
+      "duree": "30min",
+      "prix": "79 €"
+    },
+    {
+      "nom": "Shampooing meche bruhing cheveux mi long",
+      "description": "",
+      "duree": "1h 40min",
+      "prix": "89 €"
+    },
+    {
+      "nom": "Supplément Coupe",
+      "description": "",
+      "duree": "30min",
+      "prix": "Sur devis"
+    }
+  ],
+  "NOS COLORATIONS NUANCEES": [
+    {
+      "nom": "Shampoing + coloration racines + brushing - cheveux courts",
+      "description": "",
+      "duree": "1h 15min",
+      "prix": "à partir de"
+    },
+    {
+      "nom": "Shampooing Coloration des racines  et brushing - Cheveux mi long",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "79 €"
+    },
+    {
+      "nom": "Shampoing + coloration racines + brushing - cheveux longs",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "à partir de"
+    },
+    {
+      "nom": "Soin Masque",
+      "description": "",
+      "duree": "30min",
+      "prix": "10 €"
+    }
+  ],
+  "NOS LISSAGES PERSONNALISEES": [
+    {
+      "nom": "Lissage Brésilien Cheveux Courts",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "99 €"
+    },
+    {
+      "nom": "Lissage Brésilien Cheveux Mi Longs",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "129 €"
+    },
+    {
+      "nom": "Lissage Brésilien Cheveux Longs",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "149 €"
+    },
+    {
+      "nom": "Supplément Coupe",
+      "description": "",
+      "duree": "30min",
+      "prix": "20 €"
+    },
+    {
+      "nom": "Lissage au tannin cheveux court",
+      "description": "",
+      "duree": "2h",
+      "prix": "79 €"
+    }
+  ],
+  "NOS PERMANTES (CURLY)": [
+    {
+      "nom": "Permanente cheveux courts",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "69 €"
+    },
+    {
+      "nom": "Permanente Cheveux mi-Longs",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "89 €"
+    },
+    {
+      "nom": "Permanente Cheveux Longs",
+      "description": "",
+      "duree": "2h",
+      "prix": "109 €"
+    },
+    {
+      "nom": "Supplement coupe",
+      "description": "",
+      "duree": "20min",
+      "prix": "30 €"
+    },
+    {
+      "nom": "Soin spécifique",
+      "description": "",
+      "duree": "30min",
+      "prix": "25 €"
+    }
+  ],
+  "NOS EPILATIONS AUX  DETAILS": [
+    {
+      "nom": "Lèvres",
+      "description": "",
+      "duree": "10min",
+      "prix": "8 €"
+    },
+    {
+      "nom": "Sourcils",
+      "description": "",
+      "duree": "10min",
+      "prix": "de"
+    },
+    {
+      "nom": "Aisselles",
+      "description": "",
+      "duree": "10min",
+      "prix": "10 €"
+    },
+    {
+      "nom": "1/2 Jambes",
+      "description": "",
+      "duree": "10min",
+      "prix": "20 €"
+    },
+    {
+      "nom": "Jambes Entières",
+      "description": "",
+      "duree": "30min",
+      "prix": "30 €"
+    }
+  ],
+  "NOS FORFAITS EPILATIONS": [
+    {
+      "nom": "1/2 Jambes + Aisselles",
+      "description": "",
+      "duree": "30min",
+      "prix": "20 €"
+    },
+    {
+      "nom": "1/2 Jambes + Maillot simple + Aisselles",
+      "description": "",
+      "duree": "30min",
+      "prix": "35 €"
+    },
+    {
+      "nom": "1/2 Jambes + Maillot intégral + aisselles",
+      "description": "",
+      "duree": "40min",
+      "prix": "55 €"
+    },
+    {
+      "nom": "1/2 Jambes + Maillot Semi Intégral + Aisselles",
+      "description": "",
+      "duree": "40min",
+      "prix": "40 €"
+    },
+    {
+      "nom": "Jambes Complètes + Aisselles",
+      "description": "",
+      "duree": "30min",
+      "prix": "30 €"
+    }
+  ],
+  "NOS EPILATIONS HOMMES": [
+    {
+      "nom": "Dos",
+      "description": "",
+      "duree": "30min",
+      "prix": "40 €"
+    },
+    {
+      "nom": "Torse",
+      "description": "",
+      "duree": "30min",
+      "prix": "40 €"
+    },
+    {
+      "nom": "Oreilles/Nez",
+      "description": "",
+      "duree": "30min",
+      "prix": "15 €"
+    },
+    {
+      "nom": "Epaules",
+      "description": "",
+      "duree": "30min",
+      "prix": "25 €"
+    }
+  ],
+  "NOS EPILATIONS DEFINITIVES": [
+    {
+      "nom": "Lèvres",
+      "description": "",
+      "duree": "30min",
+      "prix": "30 €"
+    },
+    {
+      "nom": "Menton",
+      "description": "",
+      "duree": "30min",
+      "prix": "40 €"
+    },
+    {
+      "nom": "Visage",
+      "description": "",
+      "duree": "30min",
+      "prix": "60 €"
+    },
+    {
+      "nom": "Aisselles",
+      "description": "",
+      "duree": "30min",
+      "prix": "50 €"
+    },
+    {
+      "nom": "Demi-jambes",
+      "description": "",
+      "duree": "30min",
+      "prix": "90 €"
+    }
+  ],
+  "NOTRE HAMMAM &SPA  / PAR TELEPHONE RESA": [
+    {
+      "nom": "Hammam + Gommage savon noir",
+      "description": "",
+      "duree": "1h",
+      "prix": "jusqu'à"
+    },
+    {
+      "nom": "Ce site est exclusivement reservé pour les tarifs  Planity  les autres sites ne seront pas pris en compte pour les réservations  autres que PLANITY!!!!!",
+      "description": "",
+      "duree": "1h",
+      "prix": "Sur devis"
+    }
+  ],
+  "NOS MODELAGES RELAXATION TOTAL": [
+    {
+      "nom": "Rituel modelage relaxation 1 h",
+      "description": "",
+      "duree": "1h",
+      "prix": "75 €"
+    },
+    {
+      "nom": "Rituel modelage relaxation 30 mn",
+      "description": "",
+      "duree": "30min",
+      "prix": "à partir de"
+    },
+    {
+      "nom": "Rituel Découverte - Duo (1h moment zen, 30' massage)",
+      "description": "",
+      "duree": "30min",
+      "prix": "79 €"
+    },
+    {
+      "nom": "Massage jambes légères 45mn",
+      "description": "",
+      "duree": "45min",
+      "prix": "65 €"
+    }
+  ],
+  "NOS SOINS VISAGE MARIA GALAND": [
+    {
+      "nom": "Soin Pureté Détox Maria Galland",
+      "description": "",
+      "duree": "45min",
+      "prix": "69 €"
+    },
+    {
+      "nom": "Soin Nourrissant Préventif anti-âge",
+      "description": "",
+      "duree": "45min",
+      "prix": "75 €"
+    },
+    {
+      "nom": "Soin Hydra GLOBAL",
+      "description": "",
+      "duree": "1h 30min",
+      "prix": "99 €"
+    },
+    {
+      "nom": "Soin lumin'éclat",
+      "description": "",
+      "duree": "1h 10min",
+      "prix": "89 €"
+    },
+    {
+      "nom": "Soin redensifiant",
+      "description": "",
+      "duree": "1h",
+      "prix": "75 €"
+    }
+  ],
+  "NOS SOINS CORPS AMAINCISSANT": [
+    {
+      "nom": "Cellu M6 Palpé Roulé LPG",
+      "description": "",
+      "duree": "30min",
+      "prix": "à partir de"
+    },
+    {
+      "nom": "Forfait 10 séances DE CELLUL M6",
+      "description": "",
+      "duree": "30min",
+      "prix": "360 €"
+    },
+    {
+      "nom": "Essaie lpg",
+      "description": "",
+      "duree": "15min",
+      "prix": "30 €"
+    },
+    {
+      "nom": "Massage drainant raffermissant (palper rouler )",
+      "description": "",
+      "duree": "45min",
+      "prix": "89 €"
+    }
+  ],
+  "NOS SOINS VISAGES HOMMES": [
+    {
+      "nom": "SOIN DETOX",
+      "description": "",
+      "duree": "1h",
+      "prix": "69 €"
+    },
+    {
+      "nom": "SOIN HYDRATANT",
+      "description": "",
+      "duree": "1h 10min",
+      "prix": "89 €"
+    },
+    {
+      "nom": "SOIN CONTOUR DES YEUX",
+      "description": "",
+      "duree": "45min",
+      "prix": "59 €"
+    }
+  ],
+  "NOS ONGLES   ( NAILS ART) russe manucure": [
+    {
+      "nom": "Manucure Russe - sans vernis",
+      "description": "",
+      "duree": "30min",
+      "prix": "22 €"
+    },
+    {
+      "nom": "Manucure simple sans vernis",
+      "description": "",
+      "duree": "30min",
+      "prix": "15 €"
+    },
+    {
+      "nom": "Remplissage Avec Vernis Semi-Permanent",
+      "description": "",
+      "duree": "30min",
+      "prix": "40 €"
+    },
+    {
+      "nom": "Pose Vernis Simple",
+      "description": "",
+      "duree": "30min",
+      "prix": "15 €"
+    },
+    {
+      "nom": "Forfait Beauté des mains RUSSE + gainage gel",
+      "description": "",
+      "duree": "1h 20min",
+      "prix": "50 €"
+    }
+  ],
+  "Nos beautes des pieds": [
+    {
+      "nom": "Vernis semi-permanent Pieds",
+      "description": "",
+      "duree": "45min",
+      "prix": "30 €"
+    },
+    {
+      "nom": "Beauté des Pieds",
+      "description": "",
+      "duree": "50min",
+      "prix": "40 €"
+    },
+    {
+      "nom": "Beauté des pieds + vernis semi permanent",
+      "description": "",
+      "duree": "1h 5min",
+      "prix": "55 €"
+    },
+    {
+      "nom": "Beauté des pieds + capsules + Vernis semi",
+      "description": "",
+      "duree": "1h 10min",
+      "prix": "60 €"
+    },
+    {
+      "nom": "Beauté des pieds homme 39",
+      "description": "",
+      "duree": "45min",
+      "prix": "49 €"
+    }
+  ],
+  "NOS EXTENSIONS DE CILS": [
+    {
+      "nom": "Cil à cil naturel",
+      "description": "",
+      "duree": "1h 15min",
+      "prix": "50 €"
+    },
+    {
+      "nom": "Remplissage cil a cil naturel",
+      "description": "",
+      "duree": "50min",
+      "prix": "35 €"
+    },
+    {
+      "nom": "Volume Brésilien Léger",
+      "description": "",
+      "duree": "1h 15min",
+      "prix": "60 €"
+    },
+    {
+      "nom": "Remplissage brésilien léger",
+      "description": "",
+      "duree": "50min",
+      "prix": "45 €"
+    },
+    {
+      "nom": "Volume Brésilien Complet Ou Pose Mixte",
+      "description": "",
+      "duree": "1h 15min",
+      "prix": "70 €"
+    }
+  ],
+  "NOS BEAUTES DU REGARDS": [
+    {
+      "nom": "Teinture des cils",
+      "description": "",
+      "duree": "30min",
+      "prix": "25 €"
+    },
+    {
+      "nom": "Teinture des sourcils",
+      "description": "",
+      "duree": "30min",
+      "prix": "25 €"
+    },
+    {
+      "nom": "Epilation+ teinture sourcils",
+      "description": "",
+      "duree": "30min",
+      "prix": "30 €"
+    },
+    {
+      "nom": "Réhaussement  de Cils",
+      "description": "",
+      "duree": "30min",
+      "prix": "40 €"
+    },
+    {
+      "nom": "Brow Lift",
+      "description": "",
+      "duree": "45min",
+      "prix": "35 €"
+    }
+  ],
+  "NOS BLANCHIMENT DENTAIRE ESTHETIQUE ET STRASS": [
+    {
+      "nom": "Coup d'éclat",
+      "description": "",
+      "duree": "20min",
+      "prix": "40 €"
+    },
+    {
+      "nom": "Coup d'éclat ultra white",
+      "description": "",
+      "duree": "20min",
+      "prix": "50 €"
+    },
+    {
+      "nom": "1er séance dents sensibles",
+      "description": "",
+      "duree": "1h",
+      "prix": "69 €"
+    },
+    {
+      "nom": "1er séance ultra white",
+      "description": "",
+      "duree": "1h",
+      "prix": "89 €"
+    },
+    {
+      "nom": "2eme Séance Ultra White",
+      "description": "",
+      "duree": "1h",
+      "prix": "60 €"
+    }
+  ]
+}
