@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/montserrat':
+        specifier: ^5.1.1
+        version: 5.1.1
+      '@fontsource/playfair-display':
+        specifier: ^5.1.1
+        version: 5.1.1
       '@hookform/resolvers':
         specifier: ^4.1.2
         version: 4.1.2(react-hook-form@7.54.2(react@19.0.0))
@@ -294,6 +300,12 @@ packages:
   '@eslint/plugin-kit@0.2.7':
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource/montserrat@5.1.1':
+    resolution: {integrity: sha512-myTQCo0XWf5AXc3Pm5GFFTstueYTacE+gpL3G8Vf5ELpr/rBfW+zr7dKLPYXlq2r21HHwfyw6yueKWccWUtKBA==}
+
+  '@fontsource/playfair-display@5.1.1':
+    resolution: {integrity: sha512-BCIovoAYzgs6UIve00tjutzEDJ+iP+nMOHQP6joSmheE3WGM7m8JU/btq/iUOjV9HK5E4F8NgzdRIPfi1kWzjA==}
 
   '@hookform/resolvers@4.1.2':
     resolution: {integrity: sha512-wl6H9c9wLOZMJAqGLEVKzbCkxJuV+BYuLFZFCQtCwMe0b3qQk4kUBd/ZAj13SwcSqcx86rCgSCyngQfmA6DOWg==}
@@ -2184,6 +2196,10 @@ snapshots:
     dependencies:
       '@eslint/core': 0.12.0
       levn: 0.4.1
+
+  '@fontsource/montserrat@5.1.1': {}
+
+  '@fontsource/playfair-display@5.1.1': {}
 
   '@hookform/resolvers@4.1.2(react-hook-form@7.54.2(react@19.0.0))':
     dependencies:
