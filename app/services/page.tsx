@@ -1,186 +1,179 @@
-import ServiceCategory from "@/components/layout/ServiceCategory";
-import { EthnicButton } from "@/components/ui/ethnic-button";
+"use client";
+
+import CategoryDescription from "@/components/layout/CategoryDescription";
 import { EthnicPattern } from "@/components/ui/EthnicPattern";
 import servicesData from "@/data/services_beautes_du_monde.json";
-import { Metadata } from "next";
-import { ReactNode } from "react";
+import Link from "next/link";
+import { ReactNode, useMemo } from "react";
 
-export const metadata: Metadata = {
-  title: "Nos Services | Beautés du Monde",
-  description:
-    "Découvrez tous nos services de beauté, coiffure et bien-être inspirés des traditions du monde entier.",
+type Service = {
+  nom: string;
+  description: string;
+  duree: string;
+  prix: string;
 };
 
-interface CategoryInfo {
-  icon: ReactNode;
-  description: string;
-}
-
-interface ServicesData {
-  [category: string]: {
-    nom: string;
-    description: string;
-    duree: string;
-    prix: string;
-  }[];
-}
+type ServicesDataType = Record<string, Service[]>;
 
 export default function ServicesPage() {
-  // Liste des catégories à mettre en avant en premier
-  const featuredCategories = [
-    "NOTRE HAMMAM &SPA  / PAR TELEPHONE RESA",
-    "NOS COIFFURE FEMMES",
-    "NOS SOINS VISAGE MARIA GALAND",
-  ];
-
-  // Filtrer les catégories: d'abord les mises en avant, puis les autres par ordre alphabétique
-  const otherCategories = Object.keys(servicesData as ServicesData)
-    .filter((category) => !featuredCategories.includes(category))
-    .sort();
-
-  const orderedCategories = [...featuredCategories, ...otherCategories];
-
   // Fonction pour générer un ID d'ancrage à partir du nom de catégorie
-  const getCategoryAnchor = (category: string): string => {
+  const getCategoryId = (category: string): string => {
     return category
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/(^-|-$)/g, "");
   };
 
-  // Map des catégories aux icônes et descriptions courtes
-  const categoryInfo: Record<string, CategoryInfo> = {
-    "NOTRE HAMMAM &SPA  / PAR TELEPHONE RESA": {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M15.2 10.12c1.22-1.85 1.99-3.76 2.77-5.47a14.76 14.76 0 0 1 1.91 2.45" />
-          <path d="M16.25 7.1c-.23-.43-.46-.86-.69-1.29" />
-          <path d="M2 21L8 18" />
-          <path d="M17 21l-5-3" />
-          <path d="M22 21l-5-3" />
-        </svg>
-      ),
-      description:
-        "Détente et relaxation dans notre espace hammam traditionnel. Une parenthèse de bien-être inspirée des rituels orientaux.",
-    },
-    "NOS COIFFURE FEMMES": {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M18 9v6" />
-          <path d="M6 9v6" />
-          <path d="M12 9v6" />
-          <circle cx="6" cy="5" r="1" />
-          <circle cx="12" cy="5" r="1" />
-          <circle cx="18" cy="5" r="1" />
-        </svg>
-      ),
-      description:
-        "Coupez, colorez, coiffez... Notre équipe experte sublime vos cheveux avec les dernières techniques et tendances.",
-    },
-    // Autres catégories...
+  // Fonction pour formater le nom d'affichage de la catégorie
+  const formatCategoryName = (category: string): string => {
+    return category.replace("NOS ", "").replace(" / PAR TELEPHONE RESA", "");
   };
 
-  // Pour les autres catégories, créer des icônes par défaut
-  orderedCategories.forEach((category) => {
-    if (!categoryInfo[category]) {
-      categoryInfo[category] = {
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M9.07 3h5.86a5 5 0 0 1 5 5.07v5.86a5 5 0 0 1-5 5.07H9.07a5 5 0 0 1-5-5.07V8.07a5 5 0 0 1 5-5.07Z" />
-          </svg>
-        ),
-        description:
-          "Découvrez nos services professionnels pour sublimer votre beauté naturelle.",
-      };
-    }
-  });
+  // Icône par défaut
+  const defaultIcon: ReactNode = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" y1="8" x2="12" y2="16" />
+      <line x1="8" y1="12" x2="16" y2="12" />
+    </svg>
+  );
+
+  // Déterminer les catégories valides
+  const validCategories = useMemo(() => {
+    const typedData = servicesData as ServicesDataType;
+    return Object.keys(typedData).filter((category) => {
+      const services = typedData[category];
+      if (!services || !Array.isArray(services)) return false;
+
+      const validServices = services.filter(
+        (service) => !service.nom.includes("Ce site est exclusivement")
+      );
+
+      return validServices.length > 0;
+    });
+  }, []);
 
   return (
-    <div className="py-12 px-4">
-      <div className="container mx-auto">
-        {/* Quick navigation */}
-        <div className="mb-16">
-          <h2 className="text-xl mb-4 font-medium">Catégories</h2>
-          <div className="flex flex-wrap gap-2">
-            {orderedCategories.map((category, index) => (
+    <>
+      {/* Hero section */}
+      <div className="relative bg-gradient-to-b from-background to-card py-16">
+        <div className="absolute inset-0 opacity-5">
+          <EthnicPattern />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <h1 className="text-4xl md:text-5xl font-heading mb-4 text-center">
+            Nos Services
+          </h1>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
+            Découvrez notre gamme complète de services de beauté et bien-être
+          </p>
+        </div>
+      </div>
+
+      {/* Categories navigation */}
+      <div className="sticky top-0 z-20 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+        <div className="container mx-auto px-4 py-4 overflow-x-auto">
+          <div className="flex space-x-4 whitespace-nowrap">
+            {validCategories.map((category) => (
               <a
-                key={index}
-                href={`#${getCategoryAnchor(category)}`}
-                className="px-4 py-2 bg-muted rounded-full text-sm hover:bg-gold hover:text-white transition-colors"
+                key={category}
+                href={`#${getCategoryId(category)}`}
+                className="text-sm font-medium px-3 py-1.5 rounded-full transition-colors hover:bg-gold hover:text-background"
               >
-                {category
-                  .replace("NOS ", "")
-                  .replace(" / PAR TELEPHONE RESA", "")
-                  .toUpperCase()}
+                {formatCategoryName(category)}
               </a>
             ))}
           </div>
         </div>
+      </div>
 
-        {/* Services sections */}
-        {orderedCategories.map((category, index) => {
-          const services = (servicesData as ServicesData)[category];
-          const info = categoryInfo[category] || {};
+      {/* Services list */}
+      <div className="container mx-auto px-4 py-10">
+        {validCategories.map((category) => {
+          const typedData = servicesData as ServicesDataType;
+          const services = typedData[category];
+          const validServices = services.filter(
+            (service) => !service.nom.includes("Ce site est exclusivement")
+          );
+
+          // Trouver une description pour la catégorie
+          const categoryDescription = (() => {
+            // Cherche une description non vide
+            const serviceWithDesc = validServices.find(
+              (s) => s.description && s.description.trim() !== ""
+            );
+            if (serviceWithDesc) return serviceWithDesc.description;
+            return `Services de ${formatCategoryName(category).toLowerCase()}`;
+          })();
 
           return (
-            <ServiceCategory
-              key={index}
-              category={category}
-              services={services}
-              icon={info.icon}
-              description={info.description}
-            />
+            <section
+              key={category}
+              id={getCategoryId(category)}
+              className="mb-16 scroll-mt-24"
+            >
+              <h2 className="section-title">{formatCategoryName(category)}</h2>
+
+              <CategoryDescription
+                icon={defaultIcon}
+                description={categoryDescription}
+              />
+
+              <div className="grid gap-4">
+                {validServices.map((service, idx) => (
+                  <div
+                    key={idx}
+                    className="group p-5 border border-border rounded-md hover:border-gold/30 transition-all bg-card flex flex-col md:flex-row md:items-center justify-between"
+                  >
+                    <div className="flex-1">
+                      <h3 className="font-medium mb-1">{service.nom}</h3>
+                      <div className="flex flex-col space-y-1">
+                        <p className="text-sm text-muted-foreground">
+                          {service.duree}
+                        </p>
+                        {service.description &&
+                          service.description !== categoryDescription && (
+                            <p className="text-sm text-muted-foreground italic">
+                              {service.description}
+                            </p>
+                          )}
+                      </div>
+                    </div>
+                    <div className="mt-2 md:mt-0 md:ml-4 flex items-center gap-4">
+                      <span className="text-gold font-semibold text-lg whitespace-nowrap">
+                        {service.prix}
+                      </span>
+                      {service.prix.includes("Sur devis") ||
+                      service.prix.includes("devis") ? (
+                        <p className="text-sm font-medium px-4 py-2  text-gold">
+                          Nous contacter
+                        </p>
+                      ) : (
+                        <Link
+                          href="/reservation"
+                          className="text-sm font-medium px-4 py-2 rounded-md border border-gold text-gold hover:bg-gold/10 transition-colors"
+                        >
+                          Choisir
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
           );
         })}
-
-        {/* CTA section */}
-        <div className="mt-20 bg-card p-8 rounded-lg text-center relative overflow-hidden">
-          <div className="absolute inset-0 opacity-5">
-            <EthnicPattern />
-          </div>
-          <div className="relative z-10">
-            <h2 className="text-2xl mb-4">Prêt à vous faire chouchouter ?</h2>
-            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Prenez rendez-vous dès maintenant et offrez-vous un moment de
-              détente et de beauté dans notre salon. Notre équipe d&apos;experts
-              est impatiente de prendre soin de vous.
-            </p>
-            <EthnicButton variant="primary" size="lg">
-              Réserver un rendez-vous
-            </EthnicButton>
-          </div>
-        </div>
       </div>
-    </div>
+    </>
   );
 }

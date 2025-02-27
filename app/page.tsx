@@ -18,10 +18,7 @@ export default function Home() {
               par les traditions de beauté du monde entier.
             </p>
             <div className="flex flex-wrap gap-4">
-              <EthnicButton size="lg">Nos services</EthnicButton>
-              <EthnicButton size="lg" variant="outline">
-                Réserver
-              </EthnicButton>
+              <EthnicButton size="lg">Découvrer nos services</EthnicButton>
             </div>
           </div>
         </div>
