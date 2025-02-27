@@ -470,9 +470,9 @@ export default function PortfolioPage() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <p className="mb-4 italic text-muted-foreground">
-                "Je suis cliente régulière depuis plus d'un an et je ne peux que
-                recommander Beautés du Monde. Leur expertise en matière de
-                coiffure est incomparable."
+                &quot;Je suis cliente régulière depuis plus d&apos;un an et je
+                ne peux que recommander Beautés du Monde. Leur expertise en
+                matière de coiffure est incomparable.&quot;
               </p>
               <div className="flex items-center">
                 <div className="ml-2">
@@ -493,9 +493,9 @@ export default function PortfolioPage() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <p className="mb-4 italic text-muted-foreground">
-                "Les soins du visage sont exceptionnels, j'ai vu une réelle
-                différence sur ma peau. L'ambiance est chaleureuse et le
-                personnel très professionnel."
+                &quot;Les soins du visage sont exceptionnels, j&apos;ai vu une
+                réelle différence sur ma peau. L&apos;ambiance est chaleureuse
+                et le personnel très professionnel.&quot;
               </p>
               <div className="flex items-center">
                 <div className="ml-2">
@@ -516,9 +516,9 @@ export default function PortfolioPage() {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <p className="mb-4 italic text-muted-foreground">
-                "Le service de manucure est impeccable, avec une attention aux
-                détails impressionnante. Je recommande particulièrement leur
-                nail art qui est très créatif."
+                &quot;Le service de manucure est impeccable, avec une attention
+                aux détails impressionnante. Je recommande particulièrement leur
+                nail art qui est très créatif.&quot;
               </p>
               <div className="flex items-center">
                 <div className="ml-2">
