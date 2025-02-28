@@ -1,8 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// This is your Prisma schema file for Beautés du Monde
+// Using PostgreSQL with Supabase
 
 generator client {
   provider = "prisma-client-js"
@@ -11,4 +8,231 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+// Modèle utilisateur (intégré avec NextAuth)
+model User {
+  id            String        @id @default(cuid())
+  name          String?
+  email         String        @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          Role          @default(CLIENT)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+  appointments  Appointment[]
+  contacts      Contact[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// Catégories de services (coiffure, spa, etc.)
+model Category {
+  id          String    @id @default(cuid())
+  name        String    // Ex: "NOS COIFFURE FEMMES"
+  displayName String?   // Ex: "Coiffure Femmes" (sans le "NOS")
+  description String?   @db.Text
+  icon        String?
+  slug        String    @unique
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  services    Service[]
+
+  @@map("categories")
+}
+
+// Services offerts par le salon
+model Service {
+  id          String        @id @default(cuid())
+  name        String        // Correspond à "nom" dans le JSON
+  description String?       @db.Text
+  price       String        // "prix" dans le JSON (peut inclure "à partir de", "Sur devis", etc.)
+  duration    String        // "duree" dans le JSON (ex: "1h30")
+  durationMin Int?          // Durée en minutes (pour calculs)
+  featured    Boolean       @default(false)
+  isPromotion Boolean       @default(false)  // Pour services dans "NOS SUPER PROMOTIONS"
+  active      Boolean       @default(true)
+  categoryId  String
+  category    Category      @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  appointments Appointment[]
+  images      Image[]
+  slug        String?       @unique
+  
+  @@map("services")
+}
+
+// Rendez-vous / Réservations
+model Appointment {
+  id          String   @id @default(cuid())
+  date        DateTime
+  startTime   DateTime
+  endTime     DateTime
+  status      AppointmentStatus @default(PENDING)
+  clientId    String
+  client      User     @relation(fields: [clientId], references: [id])
+  serviceId   String
+  service     Service  @relation(fields: [serviceId], references: [id])
+  notes       String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("appointments")
+}
+
+// Formulaires de contact soumis
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  status    ContactStatus @default(UNREAD)
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contacts")
+}
+
+// Contenu dynamique du site
+model Content {
+  id        String   @id @default(cuid())
+  key       String   @unique // ex: "hero_title", "about_text"
+  value     String   @db.Text
+  type      ContentType @default(TEXT)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contents")
+}
+
+// Images pour services, témoignages, etc.
+model Image {
+  id         String   @id @default(cuid())
+  url        String
+  alt        String?
+  serviceId  String?
+  service    Service? @relation(fields: [serviceId], references: [id])
+  portfolioItem Boolean @default(false)
+  category   String?  // Catégorie pour le portfolio (coiffure, soins-visage, etc.)
+  featured   Boolean  @default(false)
+  title      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("images")
+}
+
+// Témoignages clients
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  content   String   @db.Text
+  role      String?  // ex: "Cliente depuis 2023"
+  featured  Boolean  @default(false)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("testimonials")
+}
+
+// Horaires d'ouverture
+model OpeningHour {
+  id        String   @id @default(cuid())
+  day       Day
+  openTime  String?  // Format HH:MM, null si fermé
+  closeTime String?  // Format HH:MM, null si fermé
+  isClosed  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([day])
+  @@map("opening_hours")
+}
+
+// Enums
+enum Role {
+  ADMIN
+  STAFF
+  CLIENT
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+  NO_SHOW
+}
+
+enum ContactStatus {
+  UNREAD
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+enum ContentType {
+  TEXT
+  HTML
+  JSON
+  IMAGE_URL
+}
+
+enum Day {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
 }
